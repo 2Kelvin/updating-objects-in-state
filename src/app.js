@@ -10,23 +10,24 @@ function MovingDot() {
   const dotStyle = {
     position: "absolute",
     backgroundColor: "#64FFDA",
-    borderBottomLeftRadius: "15px",
+    borderBottomLeftRadius: "8px",
     transform: `translate(${position.x}px, ${position.y}px)`,
     left: -10,
     top: -10,
-    width: 30,
-    height: 30,
+    width: 24,
+    height: 24,
   };
 
   return (
     <div
       className="movingDot"
       onPointerMove={(e) => {
+        // creating a new object with the new mouse position and setting it to state
         setPosition({ x: e.clientX, y: e.clientY });
       }}
       style={divStyle}
     >
-      <div style={dotStyle} />
+      <div style={dotStyle}></div>
     </div>
   );
 }
