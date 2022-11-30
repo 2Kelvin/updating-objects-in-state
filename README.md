@@ -1,6 +1,9 @@
 # updating-objects-in-state
 
-In this read, concepts I learn are:
+In this read, here are all the concepts I learnt:
 
-- useState can take an object as a value (for its state variable)
-- whenever you want to update a state variable holding an object as the value, `dont mutate the object`. Instead, `create a new object or make a new copy of the object` and then set it as the updated state
+- the state variable can store `all Javascript values` => strings, numbers, booleans, objects, arrays
+- strings, booleans & numbers values storedd in a state variable are `immutable`. That is, you don't really change them. What React actually does when you update them them is it `triggers a render` and `replaces these values`
+- whenever you want to update a state variable holding an object as the value, `dont mutate the object`. That is, `don't change the object directly`. Instead, `create a new object or make a new copy of the object` and then set it as the updated state
+- technically, unlike the above Javascript values, it's possible to change/ mutate an object & its properties but you should NEVER do so. `Treat objects as immutable values` just like the rest of the Javascript values. So when you want to update the state carrying an object, `always replace the object`
+- `state is read-only, you should not mutate it you should replace it`
