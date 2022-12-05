@@ -1,5 +1,7 @@
 # updating-objects-in-state
 
+![updatingObjs](https://user-images.githubusercontent.com/85868026/205668092-3a72cec4-03fd-464e-a1b1-f246ae102ce8.png)
+
 In this read, here are all the concepts I learnt:
 
 - the state variable can store `all Javascript values` => strings, numbers, booleans, objects, arrays
