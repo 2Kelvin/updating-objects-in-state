@@ -1,6 +1,10 @@
 body {
     margin: 0;
     padding: 0;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    align-items: center;
 }
 
 form {
@@ -17,4 +21,10 @@ input {
     margin-left: 1em;
     border-radius: 3px;
     border: 1px solid #333;
+}
+
+p {
+    width: 350px;
+    font-size: 19px;
+    color: blue;
 }
