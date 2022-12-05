@@ -1,39 +1,53 @@
-function MovingDot() {
-  const [position, setPosition] = React.useState({ x: 0, y: 0 });
+function Form() {
+  const [person, setPerson] = React.useState({
+    firstName: "Stephen",
+    lastName: "Curry",
+    email: "wardell30@gmail.com",
+  });
 
-  const divStyle = {
-    position: "relative",
-    width: "100vw",
-    height: "100vh",
-  };
-
-  const dotStyle = {
-    position: "absolute",
-    backgroundColor: "#64FFDA",
-    borderBottomLeftRadius: "8px",
-    transform: `translate(${position.x}px, ${position.y}px)`,
-    left: -10,
-    top: -10,
-    width: 24,
-    height: 24,
-  };
+  function handleFirstNameChange(e) {
+    setPerson({
+      ...person,
+      firstName: e.target.value,
+    });
+  }
+  function handleLastNameChange(e) {
+    setPerson({
+      ...person,
+      lastName: e.target.value,
+    });
+  }
+  function handleEmailChange(e) {
+    setPerson({
+      ...person,
+      email: e.target.value,
+    });
+  }
 
   return (
-    <div
-      className="movingDot"
-      onPointerMove={(e) => {
-        // creating a new object with the new mouse position and setting it to state
-        setPosition({ x: e.clientX, y: e.clientY });
-      }}
-      style={divStyle}
-    >
-      <div style={dotStyle}></div>
-    </div>
+    <form>
+      {/* first name input */}
+      <label>
+        First name:
+        <input value={person.firstName} onChange={handleFirstNameChange} />
+      </label>
+      {/* last name input */}
+      <label>
+        Last name:
+        <input value={person.lastName} onChange={handleLastNameChange} />
+      </label>
+      {/* email input */}
+      <label>
+        Email:
+        <input value={person.email} onChange={handleEmailChange} />
+      </label>
+      <p>{person.firstName + " " + person.lastName + ": " + person.email}</p>
+    </form>
   );
 }
 
 export default function App() {
-  return <MovingDot />;
+  return <Form />;
 }
 
 const root = ReactDOM.createRoot(document.getElementById("rootNode"));
